@@ -11,9 +11,9 @@
       <div class="col-md-8">
         <div class="search">
           <i class="fa fa-search"></i>
-            <form onsubmit="validateForm()" method="post" action="http://icni.alwaysdata.net/search">
+            <form onsubmit="validateForm()" method="POST" action="http://192.168.100.113:8100/search/">
               <label for="search">SATN:</label>
-              <input type="number" id="search" name="number" pattern="[0-9]*" class="form-control" placeholder="Numero de integracion" required>
+              <input type="text" id="search" name="number" class="form-control" placeholder="Numero de integracion" required>
               <input class="btn btn-primary" type="submit" value="Buscar">
             </form>
         </div>
@@ -27,7 +27,7 @@
 <script>
 class NumberValidationStrategy {
     validate(number) {
-        if (number.length !== 13 && number.length !== 8) {
+        if (number.length !== 24) {
             return false;
         }
         return true;
@@ -41,7 +41,7 @@ class NumberValidator {
 
     validate(number) {
         if (!this.strategy.validate(number)) {
-            alert("Debe ingresar 13 o 8 números");
+            alert("Debe ingresar 24 caracteres");
             return false;
         }
         return true;
@@ -65,5 +65,7 @@ function validateForm() {
 
 
 </html>
+
+
 
 
