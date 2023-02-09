@@ -14,7 +14,7 @@ class APIHandler:
     def send_number_to_api(self, number:str):
         
         print(' entra al send')
-        url = "http://192.168.100.83:8100/numIntegracion"
+        url = "http://192.168.1.129:8111/numIntegracion"
         data = {"num_integracion": number}
         headers = {'Content-Type': 'application/json'}
         try:
